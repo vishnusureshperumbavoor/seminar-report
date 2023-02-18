@@ -21,7 +21,7 @@
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{1pt}
 
-\lhead{\footnotesize{HOMOMORPHIC ENCRYPTION
+\lhead{\footnotesize{SELF SUPERVISED GRAPH NEURAL NETWORKS
 }}
 \rhead{}
 \lfoot{\footnotesize{Department of Computer Science \& Engg.}}
@@ -55,15 +55,15 @@
 
     \fontsize{14}{25}\selectfont{\textbf{A SEMINAR REPORT}}\\[.1cm]
     \fontsize{14}{25}\selectfont{on}\\
-    \fontsize{20}{25}\selectfont{\textbf{HOMOMORPHIC ENCRYPTION
-    }}\\[1.2cm]
+    \fontsize{20}{25}\selectfont{\textbf{SELF SUPERVISED GRAPH NEURAL NETWORKS
+    }}\\[0.6cm]
     \end{center}
     \begin{minipage}{.4\textwidth}
     \begin{flushleft}
     \begin{center}
     \fontsize{12}{25}\selectfont{\textbf{Submitted by}}\\[.2cm]
-    \fontsize{14}{25}\selectfont \bfseries{VINAYAK PRAKASH}\\[.1cm]
-    \fontsize{12}{25}\selectfont{\textbf{vinayakprakash2121@gmail.com}}\\[.2cm]
+    \fontsize{14}{25}\selectfont \bfseries{VISHNU SURESH}\\[.1cm]
+    \fontsize{12}{25}\selectfont{\textbf{vishnusureshperumbavoor@gmail.com}}\\[.2cm]
 %\vfill
  \end{center}
     \end{flushleft}
@@ -73,8 +73,8 @@
 \begin{center}
     \fontsize{12}{25}\selectfont{\textbf{Lecturer}}\\[.2cm]
 %\vfill
-\fontsize{14}{25}\selectfont \bfseries{CHINCHU PAULOSE}\\[.1cm]
-\fontsize{12}{25}\selectfont{\textbf{chinchu432@gmail.com}}\\[.2cm]
+\fontsize{14}{25}\selectfont \bfseries{GLAXY GEORGE}\\[.1cm]
+\fontsize{12}{25}\selectfont{\textbf{glaxygeorge@gmail.com}}\\[.2cm]
 \end{center}
 \end{flushright}
 \end{minipage}
@@ -89,7 +89,11 @@
     \begin{abstract}
       \vspace{1.0cm}
 
- \paragraph{ }Homomorphic encryption is a powerful technique that enables computations to be performed on encrypted data without first decrypting it. This means that sensitive data can be stored and processed securely without the need for a trusted third party. In other words, homomorphic encryption enables computations to be performed on encrypted data while keeping the data confidential.Homomorphic encryption is a relatively new area of research in cryptography, with the first fully homomorphic encryption scheme proposed by Craig Gentry in 2009. Since then, a number of researchers have developed various homomorphic encryption schemes, each with its own strengths and weaknesses.One of the most important properties of homomorphic encryption is that it is secure. This means that even if an attacker were to obtain access to the encrypted data, they would not be able to learn anything about the underlying plaintext data. Additionally, the computations performed on the encrypted data do not reveal any information about the plaintext data.Another important property of homomorphic encryption is that it is flexible. Homomorphic encryption schemes can be designed to support a wide range of computations, including arithmetic operations, logical operations, and even machine learning algorithms.
+ \paragraph{ }Self-supervised graph neural networks refer to a class of machine learning models that can learn to extract meaningful features from graph-structured data without the need for explicit supervision. This approach involves leveraging the intrinsic structure of the graph to generate pseudo-labels or tasks that can be used to train the model.
+
+In self-supervised graph neural networks, the model is trained on a graph dataset by predicting either the existence of edges between nodes or the labels of nodes based on their local neighborhood structure. By doing so, the model can learn to capture the underlying patterns and relationships in the graph, even in the absence of explicit supervision.
+
+The effectiveness of self-supervised graph neural networks has been demonstrated in various applications, such as node classification, link prediction, and graph clustering. These models have the potential to enable more efficient and effective analysis of complex graph-structured data, such as social networks, biological networks, and knowledge graphs.
 \end{abstract}
 
   \tableofcontents
@@ -97,7 +101,13 @@
 
 \chapter{INTRODUCTION}
 
-\paragraph{}Homomorphic encryption is a cryptographic technique that allows computations to be performed on ciphertext, resulting in encrypted output that, when decrypted, is equivalent to the result of the same computation performed on the plaintext. This has important implications for privacy and security in a variety of applications, including cloud computing, data storage and sharing, and privacy-sensitive data processing.
+\paragraph{}Graph-structured data is ubiquitous in various domains, such as social networks, biological networks, and knowledge graphs. Extracting meaningful information from these complex data requires advanced machine learning techniques that can handle the inherent challenges of graph data, such as irregularity, sparsity, and high dimensionality. Graph neural networks (GNNs) have emerged as a powerful class of models that can effectively learn representations of graph-structured data.
+
+However, traditional GNNs require explicit supervision in the form of labeled nodes or edges, which can be expensive and time-consuming to obtain. Self-supervised learning has emerged as an alternative paradigm that can alleviate the need for explicit supervision by leveraging the intrinsic structure of the data. In self-supervised learning, the model learns to perform a task that is designed to be easy to solve based on the input data. The solution to this task provides a set of pseudo-labels that can be used to train the model.
+
+Self-supervised graph neural networks extend this concept to graph-structured data. These models are trained on unlabeled graph data by performing a self-supervised task, such as predicting the existence of edges or the labels of nodes based on their local neighborhood structure. By doing so, the model can learn to capture the underlying patterns and relationships in the graph, even in the absence of explicit supervision.
+
+Self-supervised graph neural networks have shown promising results in various applications, such as node classification, link prediction, and graph clustering. These models have the potential to enable more efficient and effective analysis of complex graph-structured data, which can have significant implications in many fields, such as drug discovery, social network analysis, and recommendation systems.
   
 \chapter{LITERATURE REVIEW}
 Homomorphic encryption has been the subject of research for several decades, with many different approaches proposed. One of the earliest proposals for homomorphic encryption was by Rivest, Adleman, and Dertouzos in 1978, who proposed the concept of "privacy homomorphisms" . Since then, a large body of research has been conducted on the topic, including the development of various homomorphic encryption schemes, such as fully homomorphic encryption and partially homomorphic encryption.
