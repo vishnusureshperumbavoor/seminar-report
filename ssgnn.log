@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.1.20)  18 FEB 2023 13:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.1.20)  20 FEB 2023 22:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -268,7 +268,16 @@ File: l3backend-pdftex.def 2022-09-28 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box58
 ) (ssgnn.aux
 
-LaTeX Warning: Label `fig:type.png' multiply defined.
+LaTeX Warning: Label `fig:he.jpg' multiply defined.
+
+
+LaTeX Warning: Label `fig:he.jpg' multiply defined.
+
+
+LaTeX Warning: Label `fig:he.jpg' multiply defined.
+
+
+LaTeX Warning: Label `fig:he.jpg' multiply defined.
 
 )
 \openout1 = `ssgnn.aux'.
@@ -400,40 +409,68 @@ ob-tain. Self-supervised
 
 ]
 Chapter 2.
-<type.jpg, id=20, 273.73062pt x 100.41054pt>
-File: type.jpg Graphic file (type jpg)
-<use type.jpg>
-Package pdftex.def Info: type.jpg  used on input line 117.
-(pdftex.def)             Requested size: 298.75264pt x 109.59238pt.
 [3
 
- <./type.jpg>] [4]
+]
 Chapter 3.
-<he.jpg, id=28, 219.82124pt x 117.43875pt>
-File: he.jpg Graphic file (type jpg)
-<use he.jpg>
-Package pdftex.def Info: he.jpg  used on input line 132.
-(pdftex.def)             Requested size: 298.75264pt x 159.61241pt.
+[4
+
+]
+Chapter 4.
+<ssgnn1.png, id=27, 603.25375pt x 250.9375pt>
+File: ssgnn1.png Graphic file (type png)
+<use ssgnn1.png>
+Package pdftex.def Info: ssgnn1.png  used on input line 146.
+(pdftex.def)             Requested size: 298.75264pt x 124.26996pt.
+<ssgnn2.png, id=28, 1027.84pt x 309.155pt>
+File: ssgnn2.png Graphic file (type png)
+<use ssgnn2.png>
+Package pdftex.def Info: ssgnn2.png  used on input line 154.
+(pdftex.def)             Requested size: 298.75264pt x 89.86021pt.
 [5
 
- <./he.jpg>] [6]
-<algo.png, id=36, 853.1875pt x 445.665pt>
-File: algo.png Graphic file (type png)
-<use algo.png>
-Package pdftex.def Info: algo.png  used on input line 159.
-(pdftex.def)             Requested size: 298.75264pt x 156.05309pt.
- [7] [8 <./algo.png>]
-<security.png, id=45, 313.17pt x 162.6075pt>
-File: security.png Graphic file (type png)
-<use security.png>
-Package pdftex.def Info: security.png  used on input line 177.
-(pdftex.def)             Requested size: 298.75264pt x 155.12631pt.
- [9 <./security.png>] [10]
-Chapter 4.
+ <./ssgnn1.png (PNG copy)>]
+<ssgnn3.png, id=33, 1027.84pt x 383.4325pt>
+File: ssgnn3.png Graphic file (type png)
+<use ssgnn3.png>
+Package pdftex.def Info: ssgnn3.png  used on input line 162.
+(pdftex.def)             Requested size: 298.75264pt x 111.45pt.
+ [6 <./ssgnn2.png> <./ssgnn3.png>]
+Chapter 5.
+<ssgnn4.png, id=40, 618.31pt x 172.645pt>
+File: ssgnn4.png Graphic file (type png)
+<use ssgnn4.png>
+Package pdftex.def Info: ssgnn4.png  used on input line 180.
+(pdftex.def)             Requested size: 298.75264pt x 83.41922pt.
+<ssgnn5.png, id=41, 597.23125pt x 136.51pt>
+File: ssgnn5.png Graphic file (type png)
+<use ssgnn5.png>
+Package pdftex.def Info: ssgnn5.png  used on input line 188.
+(pdftex.def)             Requested size: 298.75264pt x 68.28607pt.
+[7
+
+ <./ssgnn4.png (PNG copy)>] [8 <./ssgnn5.png (PNG copy)>]
+Chapter 6.
+[9
+
+] [10]
+Chapter 7.
 [11
 
 ]
-Chapter 5.
+Chapter 8.
+
+Overfull \hbox (42.77078pt too wide) in paragraph at lines 236--237
+[]\OT1/cmr/m/n/12 https://proceedings.neurips.cc/paper/2021/hash/bf499a12e998d1
+78afd964adf64a60cb-
+ []
+
+
+Overfull \hbox (51.90958pt too wide) in paragraph at lines 240--241
+[]\OT1/cmr/m/n/12 https://proceedings.neurips.cc/paper/2021/hash/00ac8ed3b4327b
+dd4ebbebcb2ba10a00-
+ []
+
 [12
 
 ] (ssgnn.aux)
@@ -446,22 +483,22 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5326 strings out of 475385
- 85560 string characters out of 2776435
- 437284 words of memory out of 3000000
- 26630 multiletter control sequences out of 15000+600000
+ 5330 strings out of 475385
+ 85667 string characters out of 2776435
+ 436264 words of memory out of 3000000
+ 26634 multiletter control sequences out of 15000+600000
  476271 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,62p,829b,316s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 55i,12n,62p,958b,316s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\LENOVO\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcr
 m1200.pk><C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/cm/cmbx12.pfb><C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/amsfonts/cm/cmr10.pfb><C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/font
 s/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/LENOVO/AppData/Local/Programs/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on ssgnn.pdf (14 pages, 391821 bytes).
+Output written on ssgnn.pdf (14 pages, 482469 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
+ 83 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

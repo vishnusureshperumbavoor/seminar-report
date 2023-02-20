@@ -1,15 +1,21 @@
 \contentsline {paragraph}{ }{1}{}%
-\contentsline {chapter}{\numberline {1}INTRODUCTION}{2}{}%
+\contentsline {chapter}{\numberline {1}Introduction}{2}{}%
 \contentsline {paragraph}{}{2}{}%
-\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{3}{}%
-\contentsline {section}{\numberline {2.1}Fully homomorphic encryption(FHE)}{3}{}%
-\contentsline {section}{\numberline {2.2}Partially homomorphic encryption(PHE)}{4}{}%
-\contentsline {chapter}{\numberline {3}METHODOLOGY}{5}{}%
-\contentsline {section}{\numberline {3.1}Review of literature}{5}{}%
-\contentsline {section}{\numberline {3.2}Comparison of schemes}{5}{}%
-\contentsline {section}{\numberline {3.3}Implementation of schemes}{6}{}%
-\contentsline {section}{\numberline {3.4}Encryption Algorithm}{7}{}%
-\contentsline {section}{\numberline {3.5}Security analysis}{8}{}%
-\contentsline {section}{\numberline {3.6}Evaluation of Applications}{9}{}%
-\contentsline {chapter}{\numberline {4}CONCLUSIONS}{11}{}%
-\contentsline {chapter}{\numberline {5}REFERENCES}{12}{}%
+\contentsline {chapter}{\numberline {2}Downstream Tasks with Graph Data }{3}{}%
+\contentsline {section}{\numberline {2.1}Node level tasks}{3}{}%
+\contentsline {section}{\numberline {2.2}Link level tasks}{3}{}%
+\contentsline {section}{\numberline {2.3}Graph level tasks}{3}{}%
+\contentsline {chapter}{\numberline {3}Graph Neural Networks}{4}{}%
+\contentsline {chapter}{\numberline {4}Self Supervised Learning Strategies using graph data}{5}{}%
+\contentsline {section}{\numberline {4.1}Pre-training and fine-tuning}{5}{}%
+\contentsline {section}{\numberline {4.2}Joint learning}{5}{}%
+\contentsline {section}{\numberline {4.3}Unsupervised Representation Learning}{6}{}%
+\contentsline {chapter}{\numberline {5}Categorization of Self-Supervised Learning method for Graph Data}{7}{}%
+\contentsline {section}{\numberline {5.1}Contrastive Learning}{7}{}%
+\contentsline {section}{\numberline {5.2}Generative learning}{8}{}%
+\contentsline {section}{\numberline {5.3}Predictive Learning}{8}{}%
+\contentsline {chapter}{\numberline {6}Related Works}{9}{}%
+\contentsline {section}{\numberline {6.1}Graph Neural Recommendation Models}{9}{}%
+\contentsline {section}{\numberline {6.2}Self-Supervised Learning in Recommender Systems}{9}{}%
+\contentsline {chapter}{\numberline {7}Conclusion}{11}{}%
+\contentsline {chapter}{\numberline {8}References}{12}{}%

@@ -99,7 +99,7 @@ The effectiveness of self-supervised graph neural networks has been demonstrated
   \tableofcontents
 \thispagestyle{empty}
 
-\chapter{INTRODUCTION}
+\chapter{Introduction}
 
 \paragraph{}Graph-structured data is ubiquitous in various domains, such as social networks, biological networks, and knowledge graphs. Extracting meaningful information from these complex data requires advanced machine learning techniques that can handle the inherent challenges of graph data, such as irregularity, sparsity, and high dimensionality. Graph neural networks (GNNs) have emerged as a powerful class of models that can effectively learn representations of graph-structured data.
 
@@ -109,100 +109,143 @@ Self-supervised graph neural networks extend this concept to graph-structured da
 
 Self-supervised graph neural networks have shown promising results in various applications, such as node classification, link prediction, and graph clustering. These models have the potential to enable more efficient and effective analysis of complex graph-structured data, which can have significant implications in many fields, such as drug discovery, social network analysis, and recommendation systems.
   
-\chapter{LITERATURE REVIEW}
-Homomorphic encryption has been the subject of research for several decades, with many different approaches proposed. One of the earliest proposals for homomorphic encryption was by Rivest, Adleman, and Dertouzos in 1978, who proposed the concept of "privacy homomorphisms" . Since then, a large body of research has been conducted on the topic, including the development of various homomorphic encryption schemes, such as fully homomorphic encryption and partially homomorphic encryption.
-\begin{figure}[h]
-	\centering
-	\hspace{21pt}
-	\includegraphics[width=.70\linewidth]{type.jpg}
-	\label{fig:type.png}
-\end{figure}
-\section{Fully homomorphic encryption(FHE)}
-Fully homomorphic encryption (FHE) is a type of homomorphic encryption that allows for arbitrary computations to be performed on encrypted data, without the need to decrypt the data beforehand. This has important implications for privacy and security, as sensitive data can be processed without revealing its underlying content. Gentry first proposed the concept of fully homomorphic encryption in 2009, using ideal lattices as the underlying mathematical structure [3]. Since then, further research has focused on improving the efficiency and practicality of FHE, and on the development of new FHE schemes.
-\section{Partially homomorphic encryption(PHE)}\label{AA}
-Partially homomorphic encryption (PHE), on the other hand, allows for a limited set of computations to be performed on encrypted data, such as addition or multiplication. This type of encryption is less computationally intensive than FHE, and is more practical for certain types of applications, such as data sharing and cloud computing.
-  
-\chapter{METHODOLOGY}
 
-\section{Review of literature}
-In conclusion, the field of homomorphic encryption has seen a great deal of research and development, with many different approaches proposed and evaluated.In addition to the development of different homomorphic encryption schemes, research has also focused on the efficiency of these algorithms. This includes the development of algorithms that minimize the number of encryptions and decryptions required, as well as the optimization of the underlying mathematical structures used in the encryption process. Despite these efforts, there are still many challenges to be addressed, including the efficiency of these algorithms, the development of practical and secure homomorphic encryption schemes, and the need for further research into the security and privacy implications of these techniques.
+  
+\chapter{Downstream Tasks with Graph Data }
+
+When talking about the downstream tasks using the graph data, we can divide them into three categories:  
+
+\section{Node level tasks}
+Tasks that are focused on nodes properties can be considered node level tasks. Node classification can be considered as an example of a node-level task. In node classification with a self-supervised learning setting, few nodes are known with their corresponding levels which we use to predict levels for nodes that are not known.
+\section{Link level tasks}
+Tasks that are focused on learning the representation of node pairs or properties of edges can be considered link-level tasks. Link prediction can be an example of a link-level task, where using two nodes the task is to discriminate if there is an edge between them.
+\section{Graph level tasks}
+Tasks that are focused on learning from multiple graphs can be considered graph-level tasks. Graph regression can be considered a graph-level task. In a self-supervised learning setting, very few amounts of graphs with their known properties can be used to infer the properties of graphs with unknown levels using an encoder trained on a few amount of graphs with known properties.
+
+\chapter{Graph Neural Networks}
+
+From the family of neural networks, networks that can deal with the graph representation of the data can be considered as the graph neural network. Talking about the basic computation of the graph neural network, it can consist of two main components:
+
+\begin{itemize}
+\item[•] Aggregate Operation: Aggregate information from neighbourhoods.
+
+\item[•] Update Operation: Update node representation using the aggregated information from the aggregate operation.
+\end{itemize}
+
+Using the above components of computation, we receive and update the information in the components of a graph like a link, node, and edges. These updates can be considered as the learning part of the graph neural network. Using the GNN, we can train a network on graph-structured data. To apply this in self-supervised learning settings we are required to make some strategies, following which we can obtain good results. 
+
+\chapter{Self Supervised Learning Strategies using graph data}
+
+As of now, we have discussed why we should use graph data with SSL and what kind of neural network can help us with graph data. To obtain a good result from self-supervised learning with graph data, we are required to have a strong strategy to work. By looking at different works related to this field, we can divide the strategies into three categories.  
+
+\section{Pre-training and fine-tuning}
+This can be considered as a basic strategy to be followed in any self-supervised learning setting. Using this strategy, we are required to train the model in two stages. In the first stage, any encoder is trained on the predefined pretext-task, then the pre-trained parameters can be used for initializing the encoder. The second stage is the fine-tuning stage where the pre-trained encoder can be fine-tuned with a prediction head where we know about the downstream task. The below image is a representation of this strategy.
 \begin{figure}[h]
 	\centering
 	\hspace{21pt}
-	\includegraphics[width=.70\linewidth]{he.jpg}
+	\includegraphics[width=.70\linewidth]{ssgnn1.png}
 	\label{fig:he.jpg}
 \end{figure}
-\section{Comparison of schemes}
-Homomorphic encryption can be broadly categorized into two types: fully homomorphic encryption (FHE) and partially homomorphic encryption (PHE). Both types of homomorphic encryption have their own strengths and weaknesses, and are best suited for different applications.
-
-Fully homomorphic encryption (FHE) allows for arbitrary computations to be performed on encrypted data, without the need to decrypt the data beforehand. This type of encryption offers the highest level of privacy, as sensitive data can be processed without revealing its underlying content. However, FHE is computationally intensive, and is less practical for many applications, due to its slow processing speed and large storage requirements.
-
-Partially homomorphic encryption (PHE), on the other hand, allows for a limited set of computations to be performed on encrypted data, such as addition or multiplication. This type of encryption is less computationally intensive than FHE, and is more practical for certain types of applications, such as data sharing and cloud computing. However, PHE does not offer the same level of privacy as FHE, as it allows for certain computations to be performed on encrypted data, revealing some information about the underlying data.
-
-In terms of security, both FHE and PHE offer strong security guarantees, as long as the underlying mathematical structures used in the encryption process are secure. However, FHE is generally considered to be more secure than PHE, as it allows for arbitrary computations to be performed on encrypted data, making it harder for an attacker to extract information about the underlying data.
-
-In conclusion, the choice between FHE and PHE depends on the specific requirements of the application, including the level of privacy and security required, as well as the computational and storage requirements. For privacy-sensitive applications, such as medical data analysis or credit card fraud detection, FHE may be the preferred choice, as it offers the highest level of privacy. However, for applications that require fast processing and low storage requirements, PHE may be a more practical solution.
-\section{Implementation of schemes}
-For partial homomorphic encryption (PHE) schemes, the implementation typically involves the use of a public-key encryption system, such as RSA or ElGamal. The encryption process involves transforming the plaintext into ciphertext using the public key, and the decryption process involves transforming the ciphertext back into plaintext using the private key. For PHE schemes that allow for computations on encrypted data, such as addition or multiplication, specific algorithms are used to perform these computations on the ciphertext, without the need to decrypt the data beforehand.
-
-For fully homomorphic encryption (FHE) schemes, the implementation typically involves the use of a lattice-based encryption system, such as the one proposed by Gentry in 2009. The encryption process involves transforming the plaintext into ciphertext using a set of parameters that define the underlying lattice structure, and the decryption process involves transforming the ciphertext back into plaintext using the private key. For FHE schemes, specific algorithms are used to perform arbitrary computations on the ciphertext, without the need to decrypt the data beforehand.
-
-In terms of software implementation, homomorphic encryption schemes can be implemented using programming languages such as Python or C++. There are also several libraries and tools available that provide support for the implementation of homomorphic encryption, including the HElib library and the SEAL library.
-
-In conclusion, the implementation of homomorphic encryption schemes can be a complex process, involving the use of complex mathematical algorithms and encryption systems. However, with the right tools and resources, it is possible to implement homomorphic encryption and gain the benefits of privacy and security for sensitive data.
-\section{Encryption Algorithm}
-Encryption algorithm is a mathematical process used to transform plaintext into ciphertext, making it unreadable to unauthorized parties. The encryption process is performed using an encryption key, which is a string of bits used to encrypt the data. The encryption key is kept secret, and is used to decrypt the ciphertext back into the original plaintext. There are several types of encryption algorithms, including symmetric-key algorithms, public-key algorithms, and hash functions. The choice of encryption algorithm depends on the specific requirements of the application, including the level of security required, the amount of data to be encrypted, and the computational resources available. Commonly used encryption algorithms include AES, RSA, and SHA-256.
-example: AES (Advanced Encryption Standard) is a widely used symmetric-key encryption algorithm. It uses a fixed-size block cipher, which encrypts data in fixed-size blocks (128 bits), and operates on a fixed-size key (128, 192, or 256 bits). The encryption process involves transforming the plaintext into ciphertext using the encryption key and a set of fixed operations known as rounds. The decryption process involves reversing the encryption process, using the same encryption key, to transform the ciphertext back into the original plaintext.
- \begin{figure}[h]
+\section{Joint learning}
+If any specific pretext-task and downstream task is known, in such a situation, we can train the encoder with the prediction head. This strategy comes under multitask learning and jointly training the encoder and prediction head makes it joint learning. The below image can be a representation of this type of learning strategy.
+\begin{figure}[h]
 	\centering
 	\hspace{21pt}
-	\includegraphics[width=.70\linewidth]{algo.png}
-	\label{fig:type.png}
+	\includegraphics[width=.70\linewidth]{ssgnn2.png}
+	\label{fig:he.jpg}
 \end{figure}
-\section{Security analysis}
-\begin{itemize}
-\item[•] Confidentiality: Confidentiality is the property that the encrypted data is kept secret from unauthorized parties. A security analysis of an encryption algorithm should determine the level of confidentiality provided by the algorithm and the conditions under which confidentiality is maintained.
-\item[•] Integrity: Integrity is the property that the encrypted data has not been modified during transmission or storage. A security analysis of an encryption algorithm should determine the level of integrity provided by the algorithm and the conditions under which integrity is maintained.
-\item[•] Availability: Availability is the property that the encrypted data is accessible when needed. A security analysis of an encryption algorithm should determine the level of availability provided by the algorithm and the conditions under which availability is maintained.
-
-\item[•] Key size: Key size is an important factor in the security of an encryption algorithm. The larger the key size, the more secure the algorithm is considered to be. A security analysis of an encryption algorithm should determine the key size required to provide a desired level of security and the computational resources required to use the algorithm with that key size.
-
-\item[•] Resistance to attacks: A security analysis of an encryption algorithm should determine the algorithm's resistance to various forms of attack, including brute-force attacks, known-plaintext attacks, and chosen-plaintext attacks.
-
-\item[•] Efficiency: The efficiency of an encryption algorithm refers to the computational resources required to encrypt and decrypt data. A security analysis of an encryption algorithm should determine the efficiency of the algorithm and compare it to other algorithms.
-\end{itemize}
- \begin{figure}[h]
+\section{Unsupervised Representation Learning}
+This strategy is pretty similar to the pretraining and fine-tuning strategy because the first step of the training is similar in both strategies. But here in the unsupervised representation learning strategy, we make the pre-trained parameters frozen so that the model can be trained on the frozen representation with downstream tasks only. The image below can be a representation of learning using this strategy.
+\begin{figure}[h]
 	\centering
 	\hspace{21pt}
-	\includegraphics[width=.70\linewidth]{security.png}
-	\label{fig:security.png}
+	\includegraphics[width=.70\linewidth]{ssgnn3.png}
+	\label{fig:he.jpg}
 \end{figure}
-\section{Evaluation of Applications}
+
+Here in this section, we have seen what are three major strategies which can be followed to apply self-supervised learning on graph data. Considering the older work in this field, we can find there are specific categories of work performed using the graph data under the self-supervised learning settings. In the next section, we will discuss the different categories of old methods.
+
+\chapter{Categorization of Self-Supervised Learning method for Graph Data}
+
+Various works have been performed for self-supervised learning using graph data. By taking an overview from these works, we can say that methods under this field can be divided into three categories:
+
+\section{Contrastive Learning}
+We can find many works related to contrastive learning in the field of computer vision and natural language processing where in between some of the works are also there which represents the use of graph data in contrastive learning. By Generalizing them, we can find that the method works by generating multiple views of every instance through the data augmentation of the graph data. Furthermore, two views of the same instance can be considered as the positive pairs and two views from the different instance can be considered as the negative pair. After that the work of contrastive learning starts, which is to make the strong agreement between positive pairs and weak agreement between the negative pair.
+
+For example, on a given graph we can apply different transformations to get multiple views, then a set of encoders can be applied on the multiple views to generate different representations of each view, where the contrastive learning will aim to maximize the mutual information of two views. Sum-up view of this method can be represented by the following image.
+
+\begin{figure}[h]
+	\centering
+	\hspace{21pt}
+	\includegraphics[width=.70\linewidth]{ssgnn4.png}
+	\label{fig:he.jpg}
+\end{figure}
+\section{Generative learning}
+The generative methods are based on the traditional generative models where embeddings that are holding rich information can be treated as natural self-supervision. In various studies we find that the prediction head works as a graph decoder; this decoder can also be used for graph reconstruction. A sum-up view of this method can be represented by the following image.
+\begin{figure}[h]
+	\centering
+	\hspace{21pt}
+	\includegraphics[width=.70\linewidth]{ssgnn5.png}
+	\label{fig:he.jpg}
+\end{figure}
+
+The works related to generative methods focus on the information embedded in the graph, generally based on tasks such as reconstruction, which helps in exploiting the properties of graph data as self-supervision signals.
+
+\section{Predictive Learning}
+In many works, we can find out that they are focused on self-generative informative labels from the data as supervision. To obtain the labels on the data this method can follow the following ways:
+
 \begin{itemize}
-\item[•] Security requirements: The security requirements of the application should be clearly defined, including the level of confidentiality, integrity, and availability required. The encryption algorithm should provide the necessary level of security to meet these requirements.
+\item[1.] Node Property Prediction: Pre-calculation of properties can be used as self-supervised labels to utilize them for prediction.
 
-\item[•] Performance requirements: The performance requirements of the application should be taken into account, including the processing time required for encryption and decryption and the computational resources required. The encryption algorithm should be efficient enough to meet the performance requirements of the application.
+\item[2.] Context-Based Prediction: Contextual information from the graph can be extracted to perform self-supervised learning. Information can be local or global.
 
-\item[•] Key management: The key management system should be secure and efficient, and should support the use of multiple keys. The encryption algorithm should integrate well with the key management system and provide the necessary level of security for key management.
+\item[3.] Self Training: In this way, the predictive models can use the learned from pseudo-labels from clustering or random assignment.
 
-\item[•] Interoperability: The encryption algorithm should be interoperable with other encryption algorithms and with other systems. The encryption algorithm should be able to encrypt and decrypt data in a manner that is compatible with other encryption algorithms and with other systems.
-
-\item[•] Cost: The cost of the encryption algorithm, including licensing and hardware costs, should be taken into account. The encryption algorithm should provide the necessary level of security at a cost that is acceptable to the user.
-
-\item[•] Standards compliance: The encryption algorithm should comply with relevant standards and regulations, including national and international standards for encryption algorithms.
+\item[4.] Domain Knowledge Based Prediction: Subject matter experts or tools can be used in advance to analyze the graph data so that informative labels can be obtained on the graph.
 \end{itemize}
 
-\chapter{CONCLUSIONS}
-Homomorphic encryption is a powerful tool for privacy-preserving computation, and has the potential to revolutionize the way we store and process sensitive data. With further research and development, it is likely that this technology will become increasingly important in a variety of contexts, and will play a key role in ensuring the privacy and security of sensitive information.
+\chapter{Related Works}
+\section{Graph Neural Recommendation Models}
+In recent years, the development of graph neural networks has provided a strong foundation and opportunity for developing graph-related hybrid recommendation tasks6,7. In particular, GCN8,9,10, a general formulation of GNNs, is a first-order approximation to spectral graph convolution and has driven many graph neural recommendation models, such as GCMC5, NGCF11, and LightGCN4. These GCN-based graph neural networks all adopted embedding propagation to iteratively aggregate neighborhood embeddings. By stacking the propagation layers, each node can access the embeddings of higher-order neighbors12, instead of only first-order neighbors as in the traditional methods [MF, NCF]113. Therefore GNN-based methods are the latest approaches in recommender systems with their advantages of handling structural and structural data.
 
-\chapter{REFERENCES}
+\section{Self-Supervised Learning in Recommender Systems}\label{AA}
+Self-supervised learning focuses on mining its supervised signals from large-scale unsupervised data using an auxiliary task (pretext). Then, it trains the model with such constructed supervised signs to learn valuable representations for downstream tasks. The mainstream self-supervised learning includes three main categories: generative, contrastive, and adversarial, all of which have a wide range of applications14. In visual representation learning, several self-supervised targets are introduced to guide visual feature learning using intrinsically relevant supervised signals15,16. In natural language processing, the model learns to predict the next word or sentence based on the sequence above17,18. In addition, self-supervised learning is also widely used in graph data learning19,20,21. For example, InfoGraph22 and DGI23 learn node representations based on mutual information between nodes and local structures.
+
+Inspired by the results of self-supervised learning in graph learning, some recent studies24,25,26 have transposed it to the recommendation scenario. S3-Rec25 tried to use the principle of mutual information maximization to perform sequence recommendations. In addition, Wu et al.26 summarized all the stochastic enhancements on the graph and unified them into a general self-supervised graph learning framework for the recommendation.
+
+In contrast to the above methods, our work is the first to consider both intra-node features and inter-node correlations generated through pre-training tasks. In power-law distributed data, these generative signals with the attention mechanism can motivate the model to consider both head and long-tail information to improve the recommendation performance.
+
+\chapter{Conclusion}
+In recent years, self-supervised learning has emerged as a promising approach to improve the performance of graph neural networks (GNNs) in various graph-related tasks. Self-supervised learning techniques aim to learn useful representations of the graph by predicting certain graph properties or performing certain tasks on the graph without relying on labeled data.
+
+Self-supervised GNNs have shown great potential in various domains, including social network analysis, drug discovery, and traffic prediction. These models can learn meaningful representations of the graph that capture important structural information, leading to improved performance on downstream tasks.
+
+Self-supervised learning also comes with its own set of challenges. For instance, designing effective self-supervised tasks that can capture meaningful graph properties can be difficult. Additionally, the performance of self-supervised GNNs can be highly dependent on the quality and diversity of the input data.
+
+In conclusion, self-supervised GNNs have shown significant promise in advancing the state-of-the-art in graph-related tasks. As researchers continue to develop new and more effective self-supervised learning techniques, we can expect self-supervised GNNs to become an increasingly important tool in various applications.
+
+\chapter{References}
 
 \begin{itemize}
-\item[1] Stinson, D. R. (2005). Cryptography: theory and practice (Vol. 55). Boca Raton, FL: CRC press.
-\item[2] Boneh, D.,Shacham, H. (2004). Group signatures with verifier-local revocation. In Proceedings of the 13th ACM conference on Computer and communications security (pp. 424-433).
-\item[3] Menezes, A. J., van Oorschot, P. C.,  Vanstone, S. A. (1997). Handbook of applied cryptography. CRC press.
-\item[4] Goldreich, O. (2001). Foundations of cryptography: basic tools. Cambridge University Press.
-\item[5] Bellare, M., Rogaway, P. (1993). Optimal asymmetric encryption—how to encrypt with RSA. In Advances in Cryptology—CRYPTO'93 (pp. 92-111). Springer, Berlin, Heidelberg.
+\item[[1]] Self-Supervised Learning of Graph Neural Networks: A Unified Review
+
+https://ieeexplore.ieee.org/abstract/document/9764632
+
+\item[[2]] SLAPS: Self-Supervision Improves Structure Learning for Graph Neural Networks
+
+https://proceedings.neurips.cc/paper/2021/hash/bf499a12e998d178afd964adf64a60cb-Abstract.html
+
+\item[[3]] From Canonical Correlation Analysis to Self-supervised Graph Neural Networks
+
+https://proceedings.neurips.cc/paper/2021/hash/00ac8ed3b4327bdd4ebbebcb2ba10a00-Abstract.html
+
+\item[[4]] Self-supervised Heterogeneous Graph Neural Network with Co-contrastive Learning
+
+https://dl.acm.org/doi/abs/10.1145/3447548.3467415
+
+\item[[5]] Self-supervised Graph Neural Networks without explicit negative sampling
+
+https://arxiv.org/abs/2103.14958
 
 \vspace{12pt}
 \end{itemize}
